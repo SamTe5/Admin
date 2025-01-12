@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+img{
+    max-width: 100%;
+}
+
+.generalContainer{
+    background: rgb(255,255,255);
+}
+
+.navContainer{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.sliderImg{
+    width: 100%;
+    height: 400px;
+    object-fit:cover;
+    
+}
+
+
+
+.hover-img{
+    filter: grayscale(100%); /* Resmi siyah-beyaz yapar */
+    transition: filter 0.5s ease;
+}
+
+.hover-img:hover {
+    filter: grayscale(0%); /* Üzerine gelindiğinde renklenir */
+}
+
+.logo{
+    width: 80px;
+}
+/* Kapsayıcı için */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Slider yüksekliği */
+    overflow: hidden;
+}
+
+.slider-container img.sliderImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Arka plan resmini doğru boyutlandırır */
+}
+
+/* Logo için */
+.slider-container .logo-animation {
+    position: absolute;
+    top: -100px; /* Başlangıç pozisyonu (yukarıda gizli) */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    z-index: 10; /* Üstte görünmesi için */
+    animation: slideDown 2s ease-out forwards; /* Düşme animasyonu ve son pozisyonda sabit kalma */
+}
+
+
+.slider-container p {
+    position: absolute;
+    bottom: -100px; /* İlk pozisyon */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    animation: slideUp 2s forwards;
+    animation-delay: 0.5s;
+    text-align: center;
+    color: white;
+}
+
+
+
+
+/* Yazıların kapsayıcısı */
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5); /* Arka planı koyulaştırır */
+    color: white; /* Yazı rengi */
+}
+
+/* Yazılar */
+.overlay-content p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Buton */
+.overlay-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border-width: 1px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.overlay-content button:hover {
+    background-color: #847575; /* Daha koyu bir mavi */
+}
+
+.textSlider2{
+    color: white;
+}
+
+.textSlider2, .btn {
+    opacity: 0; /* Başlangıçta görünmez */
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Gecikmelerle sırayla görünsün */
+.textSlider2:nth-of-type(1) {
+    animation-delay: 0.5s; /* İlk yazı için gecikme */
+}
+
+.textSlider2:nth-of-type(2), .btn {
+    animation-delay: 1s; /* İkinci yazı ve buton için gecikme */
+}
+
+.cardImg{
+    background-image: url(imgs/logoY.png);
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    
+}
+.cC{
+ background-color: #454140 ;
+}
+
+.card-body{
+    color: white;
+}
+
+.contentCenter{
+    justify-content: center;
+    align-items: center;
+}
+
+.cCImg{
+    max-height: 300px;
+}
+
+
+/* Animasyon */
+@keyframes slideDown {
+    0% {
+        top: -100px; /* Yukarıda başlar */
+        opacity: 0; /* Şeffaf olarak başlar */
+    }
+    100% {
+        top: 50%; /* Ortada sabitlenir */
+        opacity: 1; /* Görünür hale gelir */
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        bottom: -100px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 30%;
+    }
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Başlangıçta görünmez */
+        transform: translateY(20px); /* Aşağıda başlar */
+    }
+    100% {
+        opacity: 1; /* Tamamen görünür */
+        transform: translateY(0); /* Yerine gelir */
+    }
+}
+
