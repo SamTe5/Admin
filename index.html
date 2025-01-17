@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YAPA</title>
+    <meta name="description"
+        content="Aradığınız her ürün hangi mağazalarda var, fiyat ve konumlarına göre karşılaştırma fırsatı. Hem paradan hem zamandan tasarruf. Uygulamamıza bakmadan alışveriş yapmayın!">
+
+    <title>Aradığın Her Ürünü En Uygun ve En Yakın Nerede? | Konum Bazlı Uygulama </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -12,7 +15,7 @@
 
 <body>
     <div class="generalContainer">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bgC">
             <div class="container-fluid">
                 <a class="navbar-brand navContainer" href="#">
                     <img src="imgs/logoY.png" class="logo">
@@ -25,13 +28,12 @@
                 <div class="collapse navbar-collapse navContainer" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center">
 
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Haberler</a></li>
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Köşe Yazıları</a></li>
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Lezzetler</a></li>
+
                     </ul>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0  justify-content-end">
                         <li class="nav-item ">
-                            <a class="nav-link" aria-current="page" href="#">İletişim</a>
+                            <a class="nav-link textW" aria-current="page"
+                                href="mailto:samettemas05@gmail.com">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -59,7 +61,9 @@
                             <div class="row mt-3">
                                 <div class="col-12">
                                     <p class="textSlider2">What's the Difference from Other Platforms?</p>
-                                    <button class="btn">More Information</button>
+                                    <button class="btn"
+                                        onclick="document.querySelector('.oApp').scrollIntoView({ behavior: 'smooth' });">More
+                                        Information</button>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +84,9 @@
                                 <div class="col-12">
                                     <p class="textSlider2">Please register for Markets, Clothing Stores, Restaurants,
                                         Hardware Stores, Toy Stores and much more.</p>
-                                    <button class="btn">Download The App</button>
+                                    <button class="btn"
+                                        onclick="document.querySelector('.down').scrollIntoView({ behavior: 'smooth' });">Download
+                                        The App</button>
                                 </div>
                             </div>
                         </div>
@@ -102,12 +108,14 @@
         <div class="mt-3">
             <div class="container text-center">
                 <div class="row justify-content-center">
-                    <div class="col-12 mb-4 d-flex justify-content-center w-100">
+                    <div class="col-12 mb-4 d-flex justify-content-center w-100 ">
                         <div class="card cC">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-4 order-md-1 order-2 text-center"><img src="imgs/c1.jpg" class="cCImg"></div>
-                                    <div class="col-md-8 order-md-2 order-1  cardImg">
+                                    <div class="col-md-4 order-md-1 order-2 text-center">
+                                        <img src="imgs/c1.jpg" class="cCImg">
+                                    </div>
+                                    <div class="col-md-8 order-md-2 order-1 cardImg" id="cardContent">
                                         <h5 class="card-title">User</h5>
                                         <p class="card-text">Our application shows our users location-based stores,
                                             products, and prices. If you need a product, you can see which store is
@@ -142,7 +150,8 @@
                                             prominent... Whether you are a small-scale or large-scale store, our common
                                             goal is to reach more audiences and provide the best service.</p>
                                     </div>
-                                    <div class="col-md-4 order-md-2 order-1 text-center"><img src="imgs/c2.jpg" class="cCImg"></div>
+                                    <div class="col-md-4 order-md-2 order-1 text-center"><img src="imgs/c2.jpg"
+                                            class="cCImg"></div>
 
                                 </div>
 
@@ -156,7 +165,8 @@
                         <div class="card cC">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-4 order-md-1 order-2 text-center"><img src="imgs/c3.jpg" class="cCImg"></div>
+                                    <div class="col-md-4 order-md-1 order-2 text-center"><img src="imgs/c3.jpg"
+                                            class="cCImg"></div>
                                     <div class="col-md-8 order-md-2 order-1 cardImg">
                                         <h5 class="card-title">Why?</h5>
                                         <p class="card-text">Our purpose in establishing this application is that in our
@@ -182,12 +192,281 @@
                 </div>
 
             </div>
+        </div>
 
 
+        <div class="row rows ">
+            <div class="text-center">
+                <p class="down">Download</p>
+            </div>
+            <div class="col-12">
+                <div id="countdown">
+                    <p id="timer"></p>
+                </div>
+            </div>
+            <div class="col-sm-4 col-12 bottomA bottomL">
+                <img src="imgs/google.png" class="storeImg">
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-                crossorigin="anonymous"></script>
+
+            </div>
+            <div class="col-sm-4 col-12 bottomA bottomR">
+                <img src="imgs/ios.png" class="storeImg">
+            </div>
+
+        </div>
+
+        <div>
+            <div class="row m-0 justify-content-center p-5">
+                <div class="col-sm-4">
+                    <p class="cQ">Common Questions</p>
+                </div>
+                <div class="col-sm-6">
+                    <div class="accordion acBg" id="accordionExample">
+                        <div class="accordion-item acBg">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button acBg textW" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    I am a user, do I need to pay any fees?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body textW">
+                                    No, you do not have to pay any fees.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item acBg">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed acBg textW" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Are there any fees for companies registration?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse acBg" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body textW">
+                                    Companies can create their own stores for free. You can upload 10 products and the
+                                    images you want for these products and adjust the product content. In this way, we
+                                    offer you a free site and the chance to reach more users. If you wish, you can add
+                                    more products in our other packages. Besides, what are the products that users
+                                    search for the most? How much are the prices of my products in other stores? You can
+                                    obtain instant data such as and update your sales strategy.
+                                    You can also customize your own store page, choose a design, and make your store
+                                    more visible.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item acBg">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed acBg textW" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    What's in the app?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse acBg"
+                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body textW">
+                                    Our users can see the nearest store for any product they need, along with its price,
+                                    browse the stores to see what products are available in the stores, or prepare a
+                                    grocery list and see how many of the products they want are available in which
+                                    market, and the total amount they will pay.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item acBg">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed acBg textW" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    Can I open both a user account and a company account?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body textW">
+                                    Yes, you can.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item acBg">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed acBg textW" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
+                                    I uploaded 10 of my products. It's been a while, do I have to pay a fee if I upload
+                                    1 more item?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body textW">
+                                    If you have a free package of 10, you cannot upload more products and you will not
+                                    be asked to pay. If you want to install more products, you need to upgrade your
+                                    package and you can start using more features.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item acBg">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed acBg textW" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false"
+                                    aria-controls="collapseSix">
+                                    Can I delete my account whenever I want?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body textW">
+                                    Whether you are a user or a company, you can delete your account at any time,
+                                    unconditionally.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0 justify-content-center">
+            <div class="col-12 textW text-center oApp">
+                <h2>Our Application</h2>
+            </div>
+            <div class="col-sm-5">
+                <div class="containerU">
+                    <img src="imgs/giris1.png" class="imgCevir">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <p>
+                    <span>P</span>age design is designed to be simple and user-friendly. The background is white, the
+                    form areas
+                    are
+                    highlighted with distinct and contrasting colours.
+                    "For mobile compatibility, the design allows users to easily fill out forms with one hand.
+                </p>
+
+            </div>
+
+            <div class="col-sm-5">
+                <p>
+                    <span>O</span>n our user page, you can easily access any product you want with price and store
+                    information, see
+                    the most popular products, and examine the most preferred stores near you and the products of these
+                    stores. You can also see which store has the product you are looking for and which one is more
+                    affordable.
+                </p>
+            </div>
+            <div class="col-sm-5">
+                <div class="containerU">
+                    <img src="imgs/ana2.png" class="imgCevir2">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="containerU">
+                    <img src="imgs/hesap.png" class="imgCevir">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <p><span>O</span>n this page, you can enter the list of grocery products you want to buy. According to
+                    this list, you can find out how many products are available in which market and how much you will
+                    pay in total if you shop from which market.</p>
+            </div>
+
+
+            <div class="col-sm-5">
+                <p><span>O</span>n this page, you can find the products we are looking for based on location, which is
+                    the most important feature of our application, along with their prices. For example, you can quickly
+                    see
+                    which store is closest to you for your screwdriver needs and compare their prices with all other
+                    stores.
+                    You can discover the ease of gathering all stores on a single platform in every aspect.</p>
+            </div>
+
+            <div class="col-sm-5">
+                <div class="containerU">
+                    <img src="imgs/maps.png" class="imgCevir2">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="containerU">
+                    <img src="imgs/temac.png" class="imgCevir">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <p><span>I</span>n this section on our special page for our stores, you can instantly change the theme,
+                    colors and
+                    content of your own page and upload the image you want, even if you do not know any code. You can
+                    access it whenever you want, from anywhere you want.</p>
+            </div>
+            <div class="col-sm-5">
+                <p>
+                    <span>A</span>nother feature on our store page is that whichever theme you choose, you can edit the
+                    content of that theme as you wish.
+                </p>
+            </div>
+            <div class="col-sm-5">
+                <div class="containerU">
+                    <img src="imgs/content1.png" class="imgCevir2">
+                </div>
+            </div>
+
+
+            <div class="col-sm-5">
+                <div class="containerU">
+                    <img src="imgs/analize.jpg" class="imgCevir">
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <p>
+                    <span>O</span>ne of the most important features we provide to our stores is that we offer them our
+                    special data
+                    analysis. We provide each of our stores with data such as comparing their own product prices with
+                    other stores, the most preferred and least sought-after products, and the opportunity to develop
+                    strategies supported by artificial intelligence and gain better profits.
+                </p>
+            </div>
+            <div class="col-sm-5">
+                <p>
+                    <span>O</span>ur stores can add or remove products as they wish, in whatever category they are
+                    available.
+                </p>
+            </div>
+            <div class="col-sm-5">
+                <div class="containerU">
+                    <img src="imgs/urunekle.png" class="imgCevir2">
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row m-0">
+            <div class="col-12">
+
+                <p class="textW">Copyright © 2025 Yekta. All Rights Reserve<span><a href="yektaAdmin.html"
+                            class="adminGo">d</a></span></p>
+
+
+            </div>
+        </div>
+
+        <div class="bottomContact">
+            <a href="mailto:samettemas05@gmail.com">
+                <img src="imgs/mail.png" alt="Mail Icon">
+            </a>
+            <a href="tel:+905442423947">
+                <img src="imgs/telephone.png" alt="Telephone Icon">
+            </a>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

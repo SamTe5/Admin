@@ -1,49 +1,71 @@
 * {
+    
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: cursive;
 }
+html,body{
+    width: 100%;
+    overflow-x: hidden;
+}
 
-img{
+img {
     max-width: 100%;
 }
 
-.generalContainer{
-    background: rgb(255,255,255);
+.bgC {
+    background: rgb(34, 34, 34);
 }
 
-.navContainer{
-    padding-left: 50px;
-    padding-right: 50px;
+.textW {
+    color: #ffffff;
 }
 
-.sliderImg{
-    width: 100%;
-    height: 400px;
-    object-fit:cover;
+
+.generalContainer {
+    background: rgb(34, 34, 34);
+    padding:0;
+    margin: 0;
     
 }
 
+.navContainer {
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+
+.sliderImg {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+
+}
 
 
-.hover-img{
-    filter: grayscale(100%); /* Resmi siyah-beyaz yapar */
+
+.hover-img {
+    filter: grayscale(100%);
+    /* Resmi siyah-beyaz yapar */
     transition: filter 0.5s ease;
 }
 
 .hover-img:hover {
-    filter: grayscale(0%); /* Üzerine gelindiğinde renklenir */
+    filter: grayscale(0%);
+    /* Üzerine gelindiğinde renklenir */
 }
 
-.logo{
+.logo {
     width: 80px;
 }
+
 /* Kapsayıcı için */
 .slider-container {
     position: relative;
     width: 100%;
-    height: 400px; /* Slider yüksekliği */
+    height: 400px;
+    /* Slider yüksekliği */
     overflow: hidden;
 }
 
@@ -53,24 +75,29 @@ img{
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Arka plan resmini doğru boyutlandırır */
+    object-fit: cover;
+    /* Arka plan resmini doğru boyutlandırır */
 }
 
 /* Logo için */
 .slider-container .logo-animation {
     position: absolute;
-    top: -100px; /* Başlangıç pozisyonu (yukarıda gizli) */
+    top: -100px;
+    /* Başlangıç pozisyonu (yukarıda gizli) */
     left: 50%;
     transform: translateX(-50%);
     width: 150px;
-    z-index: 10; /* Üstte görünmesi için */
-    animation: slideDown 2s ease-out forwards; /* Düşme animasyonu ve son pozisyonda sabit kalma */
+    z-index: 10;
+    /* Üstte görünmesi için */
+    animation: slideDown 2s ease-out forwards;
+    /* Düşme animasyonu ve son pozisyonda sabit kalma */
 }
 
 
 .slider-container p {
     position: absolute;
-    bottom: -100px; /* İlk pozisyon */
+    bottom: -100px;
+    /* İlk pozisyon */
     left: 50%;
     transform: translateX(-50%);
     font-size: 16px;
@@ -96,8 +123,10 @@ img{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.5); /* Arka planı koyulaştırır */
-    color: white; /* Yazı rengi */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Arka planı koyulaştırır */
+    color: white;
+    /* Yazı rengi */
 }
 
 /* Yazılar */
@@ -122,62 +151,274 @@ img{
 }
 
 .overlay-content button:hover {
-    background-color: #847575; /* Daha koyu bir mavi */
+    background-color: #847575;
+    /* Daha koyu bir mavi */
 }
 
-.textSlider2{
+.textSlider2 {
     color: white;
 }
 
-.textSlider2, .btn {
-    opacity: 0; /* Başlangıçta görünmez */
+.textSlider2,
+.btn {
+    opacity: 0;
+    /* Başlangıçta görünmez */
     animation: fadeIn 1.5s ease-out forwards;
 }
 
 /* Gecikmelerle sırayla görünsün */
 .textSlider2:nth-of-type(1) {
-    animation-delay: 0.5s; /* İlk yazı için gecikme */
+    animation-delay: 0.5s;
+    /* İlk yazı için gecikme */
 }
 
-.textSlider2:nth-of-type(2), .btn {
-    animation-delay: 1s; /* İkinci yazı ve buton için gecikme */
+.textSlider2:nth-of-type(2),
+.btn {
+    animation-delay: 1s;
+    /* İkinci yazı ve buton için gecikme */
 }
 
-.cardImg{
+.cardImg {
     background-image: url(imgs/logoY.png);
     background-position: center;
-    background-size:contain;
+    background-size: contain;
     background-repeat: no-repeat;
     margin-top: 10px;
-    
-}
-.cC{
- background-color: #454140 ;
+    opacity: 0;
+    /* Görünmez */
+    transform: translateX(50px);
+    /* Sağ tarafa kaydırılmış */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
 }
 
-.card-body{
+.cCImg {
+    max-height: 300px;
+    opacity: 0;
+    /* Görünmez */
+    transform: translateX(-50px);
+    /* Sol tarafa kaydırılmış */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+}
+
+.visible {
+    opacity: 1;
+    transform: translateX(0);
+    /* Orijinal konum */
+}
+
+
+.cC {
+    background-color: rgb(34, 34, 34);
+    border: 1px solid rgb(35, 163, 114);
+}
+
+.card-body {
     color: white;
 }
 
-.contentCenter{
+.contentCenter {
     justify-content: center;
     align-items: center;
 }
 
-.cCImg{
-    max-height: 300px;
+
+
+.storeImg {
+    width: 150px;
+    height: 150px;
+}
+
+.rows {
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.bottomA {
+    display: flex;
+    flex-direction: column;
+    /* Elemanları dikey olarak sıralar */
+    align-items: center;
+    /* Yatayda ortalar */
+    justify-content: center;
+    /* Dikeyde ortalar */
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.bottomL {
+    box-shadow: rgba(36, 211, 80, 0.625) -5px 5px, rgba(36, 211, 80, 0.3) -10px 10px, rgba(36, 211, 80, 0.2) -15px 15px, rgba(36, 211, 80, 0.1) -20px 20px, rgba(36, 211, 80, 0.05) -25px 25px;
+}
+
+.bottomR {
+    box-shadow: rgba(45, 48, 224, 0.564) 5px 5px, rgba(45, 48, 224, 0.3) 10px 10px, rgba(45, 48, 224, 0.2) 15px 15px, rgba(45, 48, 224, 0.1) 20px 20px, rgba(45, 48, 224, 0.05) 25px 25px;
+}
+
+.down {
+    font-family: 'Calligraffitti', cursive;
+    font-weight: 700;
+    font-size: 5rem;
+    position: relative;
+    text-shadow: -15px 5px 20px #4b4746;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 5px 5px 0px #605b59,
+        10px 10px 0px #7a7976
+}
+
+#timer {
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(35, 163, 114);
+}
+
+.cQ {
+    font-size: 6rem;
+    text-align: center;
+    color: white;
+}
+
+.acBg {
+    background-color: rgb(34, 34, 34);
+}
+
+/* Varsayılan durumda simge */
+.accordion-button::after {
+    content: '+';
+    /* Kendi simgeniz */
+    font-size: 2rem;
+    /* Simge boyutu */
+    color: rgb(35, 163, 114);
+    ;
+    /* Simge rengi */
+    transform: rotate(0deg);
+    /* Başlangıç dönüşü */
+    transition: transform 0.3s ease;
+    /* Dönüş animasyonu */
+    background-image: none !important;
+    /* Varsayılan arka planı kaldırır */
+
+    /* Dikeyde ortalamak için */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    /* Sağda tutmak için */
+    top: 50%;
+    transform: translateY(-50%);
+    /* Dikeyde tam ortalamak */
+}
+
+/* Accordion açıkken simge */
+.accordion-button:not(.collapsed)::after {
+    content: '-';
+    /* Açık durumdaki simge */
+    transform: rotate(180deg);
+    /* Dönüş açısı */
+}
+
+/* Varsayılan düğme ayarları */
+.accordion-button {
+    background-image: none !important;
+    /* Varsayılan arka planı kaldırır */
+    position: relative;
+    /* Simgenin pozisyonunu ayarlayabilmek için */
+}
+
+
+.containerU {
+    display: flex;
+    perspective: 1000px;
+    /* Perspektif ayarı */
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgCevir {
+    width: 200px;
+    transform: rotateX(20deg) rotateY(20deg);
+    /* Dikeyde 20 derece, yatayda 10 derece döndürme */
+    transition: transform 1s;
+    /* Dönüşüm animasyonu */
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    
+}
+
+.imgCevir2{
+    width: 200px;
+    transform: rotateX(20deg) rotateY(-10deg);
+    /* Dikeyde 20 derece, yatayda 10 derece döndürme */
+    transition: transform 1s;
+    /* Dönüşüm animasyonu */
+    transform-style: preserve-3d;
+    border-radius: 10px;
+}
+
+.col-sm-5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-sm-5 p{
+    color: #ffffff;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgb(35, 163, 114);
+    
+}
+
+.col-sm-5 p span{
+    font-size: 3rem;
+    color: rgb(35, 163, 114);
+}
+.oApp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.col-12 h2{
+    border-bottom: 1px solid rgb(35, 163, 114);
+    padding: 5px;   
+    width: 50%;
+    
+}
+.bottomContact{
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.adminGo{
+    color: #ffffff;
+    text-decoration: none;
 }
 
 
 /* Animasyon */
 @keyframes slideDown {
     0% {
-        top: -100px; /* Yukarıda başlar */
-        opacity: 0; /* Şeffaf olarak başlar */
+        top: -100px;
+        /* Yukarıda başlar */
+        opacity: 0;
+        /* Şeffaf olarak başlar */
     }
+
     100% {
-        top: 50%; /* Ortada sabitlenir */
-        opacity: 1; /* Görünür hale gelir */
+        top: 50%;
+        /* Ortada sabitlenir */
+        opacity: 1;
+        /* Görünür hale gelir */
         transform: translate(-50%, -50%);
     }
 }
@@ -187,6 +428,7 @@ img{
         opacity: 0;
         bottom: -100px;
     }
+
     100% {
         opacity: 1;
         bottom: 30%;
@@ -196,12 +438,46 @@ img{
 
 @keyframes fadeIn {
     0% {
-        opacity: 0; /* Başlangıçta görünmez */
-        transform: translateY(20px); /* Aşağıda başlar */
+        opacity: 0;
+        /* Başlangıçta görünmez */
+        transform: translateY(20px);
+        /* Aşağıda başlar */
     }
+
     100% {
-        opacity: 1; /* Tamamen görünür */
-        transform: translateY(0); /* Yerine gelir */
+        opacity: 1;
+        /* Tamamen görünür */
+        transform: translateY(0);
+        /* Yerine gelir */
     }
 }
 
+@media (max-width:500px) {
+    .logo-animation {        
+        width: 100px; 
+        z-index: 1;       
+    }
+
+    .slider-container p {      
+        z-index: 10;        
+        font-size: 14px;      
+        
+    }
+    .textSlider2{
+        font-size: 14px;
+    }
+    .down{
+        font-size: 3rem;
+    }
+    #timer{
+        font-size: 1.5rem;
+    }
+    .storeImg{
+        width: 100px;
+        height: 100px;
+    }
+
+    .cQ{
+        font-size: 2rem;
+    }
+}
