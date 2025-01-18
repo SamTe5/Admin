@@ -1,11 +1,1384 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin Y</title>
 </head>
+
 <body>
-    
+    <div class="row aContainer">
+        <div class="col-12 textC">All Transactions</div>
+        <div class="col-12 aTopContainer">
+            <div class="accordion w-100" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header w-100" id="headingOne">
+                        <button class="accordion-button " type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Add Workers
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row" id="row-template">
+                                <div class="col-1">
+                                    <p class="pWorkers">1</p>
+                                </div>
+                                <div class="col-5">
+                                    <input type="text" placeholder="Worker Name">
+                                </div>
+                                <div class="col-4">
+                                    <input type="text" name="" id="" placeholder="Worker Password">
+                                </div>
+                                <div class="col-2">
+                                    <button type="button" class="btn save-btn">Save</button>
+                                    <button type="button" class="btn delete-btn">Delete</button>
+                                </div>
+
+                            </div>
+                            <div class="col-12 aContainer">
+                                <button type="button" class="btn" id="add-row">ADD</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header w-100" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Companies
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-6  companyCol">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>İD:</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>1</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>Worker:</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Worker Name</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>Üyelik Türü:</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Üyelik Türü</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>Üyelik Süresi:</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Sınırsız</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>Company Email:</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Email</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>Company Password:</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Password</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>Company Logo:</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <img>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>Company Name:</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Name</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>Location:</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Company Location</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>Service Area:</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Area</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p>Products:</p>
+                                        </div>
+                                        <div class="col-8">
+                                            <p>Company Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header w-100" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Product List
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                <div class="col-12 textC">
+                                    <p>Species</p>
+                                </div>
+                                <div class="col-12">
+                                    <div class="accordion w-100" id="accordionExampleP">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header w-100" id="headingOneP">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOneP" aria-expanded="true"
+                                                    aria-controls="collapseOneP">
+                                                    Market
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOneP" class="accordion-collapse collapse"
+                                                aria-labelledby="headingOneP" data-bs-parent="#accordionExampleP">
+                                                <div class="accordion-body">
+                                                    <div class="accordion" id="accordionExampleM">
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header w-100" id="headingOneM">
+                                                                <button class="accordion-button" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseOneM" aria-expanded="true"
+                                                                    aria-controls="collapseOneM">
+                                                                    Fruits
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseOneM" class="accordion-collapse collapse"
+                                                                aria-labelledby="headingOneM"
+                                                                data-bs-parent="#accordionExampleM">
+                                                                <div class="accordion-body">
+                                                                    <div class="row">
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Green Apple</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Yellow Apple
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Banana</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Seedless Grape
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Mandarin</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Orange</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header w-100" id="headingTwoM">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseTwoM" aria-expanded="false"
+                                                                    aria-controls="collapseTwoM">
+                                                                    Vegetables
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseTwoM" class="accordion-collapse collapse"
+                                                                aria-labelledby="headingTwoM"
+                                                                data-bs-parent="#accordionExampleM">
+                                                                <div class="accordion-body">
+                                                                    <div class="row">
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Cucumber</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Carrot
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Lettuce</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Onion
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Potatoes</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Radish</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header w-100" id="headingThreeM">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseThreeM"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="collapseThreeM">
+                                                                    Legumes
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseThreeM" class="accordion-collapse collapse"
+                                                                aria-labelledby="headingThreeM"
+                                                                data-bs-parent="#accordionExampleM">
+                                                                <div class="accordion-body">
+                                                                    <div class="row">
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Chickpeas</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Beans
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Red Lentils</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Green Lentils
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Bulgur Wheat
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Rice</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header w-100" id="headingFourM">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseFourM"
+                                                                    aria-expanded="false" aria-controls="collapseFourM">
+                                                                    Flour
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseFourM" class="accordion-collapse collapse"
+                                                                aria-labelledby="headingFourM"
+                                                                data-bs-parent="#accordionExampleM">
+                                                                <div class="accordion-body">
+                                                                    <div class="row">
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center"> Mis Flour 5kg
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Söke Flour 5kg
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Mis Flour 10kg
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Soke Flour 10kg
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Mis Flour 1kg
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Söke Flour 1kg
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header w-100" id="headingFiveM">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseFiveM"
+                                                                    aria-expanded="false" aria-controls="collapseFiveM">
+                                                                    Spice
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseFiveM" class="accordion-collapse collapse"
+                                                                aria-labelledby="headingFiveM"
+                                                                data-bs-parent="#accordionExampleM">
+                                                                <div class="accordion-body">
+                                                                    <div class="row">
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Billur Salt 1kg
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center"> Tat Black
+                                                                                    Papper 100gr
+                                                                                </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Ets Black Papper
+                                                                                    100gr</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Ask Chili Pepper
+                                                                                    100gr </h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Tat Chili Pepper
+                                                                                    100gr</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 ">
+                                                                            <div>
+                                                                                <h3 class="text-center">Ersa Oregano
+                                                                                    50gr</h3>
+                                                                            </div>
+
+                                                                            <div class="row urunBorder">
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                                <div class="col-2">
+                                                                                    <p>Firma ismi</p>
+                                                                                    <p>fiyatı</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header w-100" id="headingTwoP">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwoP"
+                                                    aria-expanded="false" aria-controls="collapseTwoP">
+                                                    Restorant
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwoP" class="accordion-collapse collapse"
+                                                aria-labelledby="headingTwoP" data-bs-parent="#accordionExampleP">
+                                                <div class="accordion-body">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Standard Raw Meatball Wrap</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Double Raw Meatball Wrap</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Raw Meatball 1kg</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Adana Kebab</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Urfa Kebab</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Beyti Kebab</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Minced Meat Pita</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Standart Chicken Wrap</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Zurna Chicken Wrap</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header w-100" id="headingThreeP">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseThreeP"
+                                                    aria-expanded="false" aria-controls="collapseThreeP">
+                                                    Coffee
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThreeP" class="accordion-collapse collapse"
+                                                aria-labelledby="headingThreeP" data-bs-parent="#accordionExampleP">
+                                                <div class="accordion-body">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Hot Latte</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Hot Mocha</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">White Mocha</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Filter Coffee</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Dark Filter Coffee</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Turkish Coffee</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div>
+                                                                <h3 class="text-center">Dibek Coffee</h3>
+                                                            </div>
+
+                                                            <div class="row urunBorder">
+                                                                <div class="col-2">
+                                                                    <p>Firma ismi</p>
+                                                                    <p>fiyatı</p>
+                                                                    <p>Açıklama</p>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header w-100" id="headingFourP">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseFourP"
+                                                    aria-expanded="false" aria-controls="collapseFourP">
+                                                    Clothes
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFourP" class="accordion-collapse collapse"
+                                                aria-labelledby="headingFourP" data-bs-parent="#accordionExampleP">
+                                                <div class="accordion-body">
+                                                    <div class="accordion" id="accordionExampleK">
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header w-100">
+                                                                <button class="accordion-button" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseOneK" aria-expanded="true"
+                                                                    aria-controls="collapseOneK">
+                                                                    Jeans
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseOneK"
+                                                                class="accordion-collapse collapse"
+                                                                data-bs-parent="#accordionExampleK">
+                                                                <div class="accordion-body">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header w-100">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseTwoK" aria-expanded="false"
+                                                                    aria-controls="collapseTwoK">
+                                                                    Tsirt
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseTwoK" class="accordion-collapse collapse"
+                                                                data-bs-parent="#accordionExampleK">
+                                                                <div class="accordion-body">
+                                                                    <strong>This is the second item's accordion
+                                                                        body.</strong> It is hidden by default, until
+                                                                    the collapse plugin adds the appropriate classes
+                                                                    that we use to style each element. These classes
+                                                                    control the overall appearance, as well as the
+                                                                    showing and hiding via CSS transitions. You can
+                                                                    modify any of this with custom CSS or overriding our
+                                                                    default variables. It's also worth noting that just
+                                                                    about any HTML can go within the
+                                                                    <code>.accordion-body</code>, though the transition
+                                                                    does limit overflow.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header w-100">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseThreeK"
+                                                                    aria-expanded="false" aria-controls="collapseThreeK">
+                                                                    Shirt
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseThreeK" class="accordion-collapse collapse"
+                                                                data-bs-parent="#accordionExampleK">
+                                                                <div class="accordion-body">
+                                                                    <strong>This is the third item's accordion
+                                                                        body.</strong> It is hidden by default, until
+                                                                    the collapse plugin adds the appropriate classes
+                                                                    that we use to style each element. These classes
+                                                                    control the overall appearance, as well as the
+                                                                    showing and hiding via CSS transitions. You can
+                                                                    modify any of this with custom CSS or overriding our
+                                                                    default variables. It's also worth noting that just
+                                                                    about any HTML can go within the
+                                                                    <code>.accordion-body</code>, though the transition
+                                                                    does limit overflow.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header w-100" id="headingFiveP">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseFiveP"
+                                                    aria-expanded="false" aria-controls="collapseFiveP">
+                                                    Glassware
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFiveP" class="accordion-collapse collapse"
+                                                aria-labelledby="headingFiveP" data-bs-parent="#accordionExampleP">
+                                                <div class="accordion-body">
+                                                    <strong>This is the third item's accordion body.</strong> It is
+                                                    hidden
+                                                    by default, until the collapse plugin adds the appropriate classes
+                                                    that
+                                                    we use to style each element. These classes control the overall
+                                                    appearance, as well as the showing and hiding via CSS transitions.
+                                                    You
+                                                    can modify any of this with custom CSS or overriding our default
+                                                    variables. It's also worth noting that just about any HTML can go
+                                                    within
+                                                    the <code>.accordion-body</code>, though the transition does limit
+                                                    overflow.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header w-100" id="headingSixP">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseSixP"
+                                                    aria-expanded="false" aria-controls="collapseSixP">
+                                                    Stationary
+                                                </button>
+                                            </h2>
+                                            <div id="collapseSixP" class="accordion-collapse collapse"
+                                                aria-labelledby="headingSixP" data-bs-parent="#accordionExampleP">
+                                                <div class="accordion-body">
+                                                    <strong>This is the third item's accordion body.</strong> It is
+                                                    hidden
+                                                    by default, until the collapse plugin adds the appropriate classes
+                                                    that
+                                                    we use to style each element. These classes control the overall
+                                                    appearance, as well as the showing and hiding via CSS transitions.
+                                                    You
+                                                    can modify any of this with custom CSS or overriding our default
+                                                    variables. It's also worth noting that just about any HTML can go
+                                                    within
+                                                    the <code>.accordion-body</code>, though the transition does limit
+                                                    overflow.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header w-100" id="headingSevenP">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseSevenP"
+                                                    aria-expanded="false" aria-controls="collapseSevenP">
+                                                    Bakery
+                                                </button>
+                                            </h2>
+                                            <div id="collapseSevenP" class="accordion-collapse collapse"
+                                                aria-labelledby="headingSevenP" data-bs-parent="#accordionExampleP">
+                                                <div class="accordion-body">
+                                                    <strong>This is the third item's accordion body.</strong> It is
+                                                    hidden
+                                                    by default, until the collapse plugin adds the appropriate classes
+                                                    that
+                                                    we use to style each element. These classes control the overall
+                                                    appearance, as well as the showing and hiding via CSS transitions.
+                                                    You
+                                                    can modify any of this with custom CSS or overriding our default
+                                                    variables. It's also worth noting that just about any HTML can go
+                                                    within
+                                                    the <code>.accordion-body</code>, though the transition does limit
+                                                    overflow.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header w-100" id="headingEightP">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseEightP"
+                                                    aria-expanded="false" aria-controls="collapseEightP">
+                                                    Technology
+                                                </button>
+                                            </h2>
+                                            <div id="collapseEightP" class="accordion-collapse collapse"
+                                                aria-labelledby="headingEightP" data-bs-parent="#accordionExampleP">
+                                                <div class="accordion-body">
+                                                    <strong>This is the third item's accordion body.</strong> It is
+                                                    hidden
+                                                    by default, until the collapse plugin adds the appropriate classes
+                                                    that
+                                                    we use to style each element. These classes control the overall
+                                                    appearance, as well as the showing and hiding via CSS transitions.
+                                                    You
+                                                    can modify any of this with custom CSS or overriding our default
+                                                    variables. It's also worth noting that just about any HTML can go
+                                                    within
+                                                    the <code>.accordion-body</code>, though the transition does limit
+                                                    overflow.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        // Worker bilgilerini saklamak için bir dizi oluştur
+        const workers = [];
+
+        // ADD butonunu seç
+        const addButton = document.getElementById('add-row');
+
+        // Ana container
+        const accordionBody = document.querySelector('.accordion-body');
+
+        // Şablon div (ilk row)
+        const templateRow = document.getElementById('row-template');
+
+        // ADD butonuna tıklama olayı
+        addButton.addEventListener('click', () => {
+            // Yeni bir row oluştur
+            const newRow = templateRow.cloneNode(true);
+
+            // Yeni row'un p elementindeki metni güncelle
+            const newIndex = accordionBody.querySelectorAll('.row').length + 1;
+            newRow.querySelector('.pWorkers').textContent = newIndex;
+
+            // Yeni row'un input değerlerini temizle
+            newRow.querySelector('input[placeholder="Worker Name"]').value = '';
+            newRow.querySelector('input[placeholder="Worker Password"]').value = '';
+
+            // Delete butonuna olay dinleyici ekle
+            const deleteButton = newRow.querySelector('.delete-btn');
+            deleteButton.addEventListener('click', handleDelete);
+
+            // Save butonuna olay dinleyici ekle
+            const saveButton = newRow.querySelector('.save-btn');
+            saveButton.addEventListener('click', handleSave);
+
+            // Yeni row'u ana container'a ekle
+            accordionBody.insertBefore(newRow, addButton.parentNode);
+        });
+
+        // Silme işlemini yöneten fonksiyon
+        function handleDelete(event) {
+            const row = event.target.closest('.row'); // Tıklanan row'u seç
+            const number = row.querySelector('.pWorkers').textContent; // Satır numarasını al
+            const confirmDelete = confirm('Bu satırı silmek istediğinize emin misiniz?');
+            if (confirmDelete) {
+                // Diziden kaldır
+                const index = workers.findIndex(worker => worker.number === number);
+                if (index !== -1) {
+                    workers.splice(index, 1); // Diziden öğeyi sil
+                    console.log('Worker silindi:', number);
+                    console.log('Güncel workers:', workers);
+                }
+
+                // Row'u sil
+                row.remove();
+
+                // Kalan satırların numaralarını güncelle
+                updateRowNumbers();
+            }
+        }
+
+        // Save işlemini yöneten fonksiyon
+        function handleSave(event) {
+            const row = event.target.closest('.row'); // Tıklanan row'u seç
+            const number = row.querySelector('.pWorkers').textContent; // Satır numarasını al
+            const name = row.querySelector('input[placeholder="Worker Name"]').value;
+            const password = row.querySelector('input[placeholder="Worker Password"]').value;
+
+            if (name && password) {
+                // Önce var olan kaydı güncelle veya ekle
+                const index = workers.findIndex(worker => worker.number === number);
+                if (index !== -1) {
+                    workers[index] = { number, name, password }; // Güncelle
+                } else {
+                    workers.push({ number, name, password }); // Yeni ekle
+                }
+                console.log('Worker kaydedildi/güncellendi:', { number, name, password });
+                console.log('Tüm workers:', workers);
+                alert('Worker başarıyla kaydedildi!');
+            } else {
+                alert('Lütfen tüm alanları doldurun.');
+            }
+        }
+
+        // Satır numaralarını güncelleyen fonksiyon
+        function updateRowNumbers() {
+            const rows = accordionBody.querySelectorAll('.row');
+
+            // workers dizisini de güncelle
+            rows.forEach((row, index) => {
+                const number = index + 1;
+                row.querySelector('.pWorkers').textContent = number;
+
+                // workers dizisindeki numarayı güncelle
+                const worker = workers.find(w => w.number === number.toString());
+                if (worker) {
+                    worker.number = number.toString();
+                }
+            });
+
+            // workers dizisindeki numaraları sıralama
+            workers.forEach((worker, index) => {
+                worker.number = (index + 1).toString(); // Dizideki her worker için numarayı güncelle
+            });
+        }
+
+        // İlk satırdaki Delete butonu için olay dinleyici ekle
+        templateRow.querySelector('.delete-btn').addEventListener('click', handleDelete);
+
+        // İlk satırdaki Save butonu için olay dinleyici ekle
+        templateRow.querySelector('.save-btn').addEventListener('click', handleSave);
+    </script>
+
+
+
+
 </body>
+
 </html>

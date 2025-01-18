@@ -481,3 +481,45 @@ img {
         font-size: 2rem;
     }
 }
+
+/*ADMİN*/
+
+.aTopContainer{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.textC{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+#add-row{
+    font-size: 1rem;
+    font-weight: bolder;
+    border: 1px solid black;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.companyCol{
+    border:1px solid black;
+    border-radius: 10px;
+}
+.urunBorder{
+    border:1px solid greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
